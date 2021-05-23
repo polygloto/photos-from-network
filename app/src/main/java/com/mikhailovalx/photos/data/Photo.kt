@@ -1,6 +1,6 @@
 package com.mikhailovalx.photos.data
 
-data class PhotoDomain(
+data class Photo(
     val id: String,
     val url: String,
     val title: String
