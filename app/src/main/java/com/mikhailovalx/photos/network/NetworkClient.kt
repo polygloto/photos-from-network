@@ -15,7 +15,7 @@ object NetworkClient {
     //The next call will return the value without reinitialization.
     val client: FlickrApi by lazy {
         Retrofit.Builder().baseUrl(FLICKR_BASE_URL)
-            .addConverterFactory(
+            .addConverterFactory( // Conversion support. To turn json into an object.
                 GsonConverterFactory.create(
                     GsonBuilder()
                         .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)

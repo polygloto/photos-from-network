@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.mikhailovalx.photos.USERS_INPUT_QUERY
 import com.mikhailovalx.photos.data.Photo
 import com.mikhailovalx.photos.network.NetworkClient
 import kotlinx.coroutines.launch
@@ -16,9 +17,11 @@ class PhotosFragmentViewModel(application: Application) : AndroidViewModel(appli
 
     var photosAdapter = PhotosAdapter()
 
-    fun loadPhotos(): LiveData<List<Photo>>{
+    fun loadPhotos(findByUserQuery: Boolean = false): LiveData<List<Photo>> {
         viewModelScope.launch {
-            val searchResponse = NetworkClient.client.getImages()
+            val searchResponse =
+                if (findByUserQuery) NetworkClient.client.getImages(USERS_INPUT_QUERY) else NetworkClient.client.getRandomImages()
+
             val photosList = searchResponse.photos.photo.map { photo ->
                 Photo(
                     id = photo.id,
@@ -31,7 +34,7 @@ class PhotosFragmentViewModel(application: Application) : AndroidViewModel(appli
 
         }
 
-        return  photosListLiveData
+        return photosListLiveData
 
     }
 }
