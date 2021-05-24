@@ -1,5 +1,5 @@
-Pet project Photos from network
-Application for study:
+Pet project "Photos from network"
+The application uses:
 - Navigation component
 - MVVM
 - Retrofit
