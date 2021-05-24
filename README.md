@@ -1,4 +1,4 @@
-#Pet project Photos from network
+Pet project Photos from network
 Application for study:
 - Navigation component
 - MVVM
