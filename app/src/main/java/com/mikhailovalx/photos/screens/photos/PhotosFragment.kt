@@ -5,13 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import com.mikhailovalx.photos.APP_ACTIVITY
-import com.mikhailovalx.photos.R
-import com.mikhailovalx.photos.USERS_INPUT_QUERY
-import com.mikhailovalx.photos.data.Photo
+import com.mikhailovalx.photos.utilits.APP_ACTIVITY
+import com.mikhailovalx.photos.utilits.USERS_INPUT_QUERY
 import com.mikhailovalx.photos.databinding.FragmentPhotosBinding
 
 

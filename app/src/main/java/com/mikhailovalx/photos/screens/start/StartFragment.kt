@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.mikhailovalx.photos.APP_ACTIVITY
+import com.mikhailovalx.photos.utilits.APP_ACTIVITY
 import com.mikhailovalx.photos.R
 import com.mikhailovalx.photos.databinding.FragmentStartBinding
 

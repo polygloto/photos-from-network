@@ -1,4 +1,6 @@
-package com.mikhailovalx.photos
+package com.mikhailovalx.photos.utilits
+
+import com.mikhailovalx.photos.MainActivity
 
 lateinit var APP_ACTIVITY: MainActivity
 lateinit var USERS_INPUT_QUERY: String

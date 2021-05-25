@@ -2,11 +2,22 @@ package com.mikhailovalx.photos
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.mikhailovalx.photos.databinding.ActivityMainBinding
+import com.mikhailovalx.photos.utilits.APP_ACTIVITY
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.core.Flowable
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.core.Single
+import io.reactivex.rxjava3.schedulers.Schedulers
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
+
+    val TAG: String = "LogRxJava"
 
     lateinit var navController: NavController
     private var _binding: ActivityMainBinding? = null
@@ -28,4 +39,6 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         _binding = null
     }
+
+
 }

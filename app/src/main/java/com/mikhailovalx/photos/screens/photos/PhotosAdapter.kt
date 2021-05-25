@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.mikhailovalx.photos.IMAGE_SIDE_PX
+import com.mikhailovalx.photos.utilits.IMAGE_SIDE_PX
 import com.mikhailovalx.photos.R
 import com.mikhailovalx.photos.data.Photo
 import com.squareup.picasso.Picasso
