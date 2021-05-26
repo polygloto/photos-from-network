@@ -40,8 +40,8 @@ class PhotosFragment : Fragment() {
         binding.recyclerView.layoutManager = GridLayoutManager(APP_ACTIVITY, 3)
 
         binding.btnGetPhotos.setOnClickListener {
-            findByUserQuery = binding.edtSearchQuery.text.isNotEmpty()
-            USERS_INPUT_QUERY = binding.edtSearchQuery.text.toString()
+            findByUserQuery = binding.edtSearchQuery.text.trim().isNotEmpty()
+            USERS_INPUT_QUERY = binding.edtSearchQuery.text.trim().toString()
             loadPhotos()
         }
     }
