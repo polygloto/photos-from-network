@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentActivity
 import com.mikhailovalx.photos.MainActivity
 import com.mikhailovalx.photos.R
 import com.mikhailovalx.photos.databinding.FragmentStartBinding
@@ -29,11 +30,13 @@ class StartFragment : Fragment() {
     }
 
     private fun initialization() {
-        val mainActivity = activity as MainActivity
-        binding.btnOpenPhotosPage.setOnClickListener{
-            mainActivity.navController.navigate(R.id.action_startFragment_to_photosFragment)
+        binding.btnOpenPhotosPage.setOnClickListener {
+            getMainActivity(activity)?.navController?.navigate(R.id.action_startFragment_to_photosFragment)
         }
     }
+
+    private fun getMainActivity(activity: FragmentActivity?): MainActivity? =
+        if (activity is MainActivity) activity else null
 
     override fun onDestroyView() {
         super.onDestroyView()
