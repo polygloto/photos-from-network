@@ -7,8 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import com.mikhailovalx.photos.utilits.APP_ACTIVITY
-import com.mikhailovalx.photos.utilits.USERS_INPUT_QUERY
 import com.mikhailovalx.photos.databinding.FragmentPhotosBinding
 
 
@@ -37,17 +35,16 @@ class PhotosFragment : Fragment() {
     private fun initialization() {
         viewModel = ViewModelProvider(this).get(PhotosFragmentViewModel::class.java)
         binding.recyclerView.adapter = viewModel.photosAdapter
-        binding.recyclerView.layoutManager = GridLayoutManager(APP_ACTIVITY, 3)
+        binding.recyclerView.layoutManager = GridLayoutManager(context, 3)
 
         binding.btnGetPhotos.setOnClickListener {
             findByUserQuery = binding.edtSearchQuery.text.trim().isNotEmpty()
-            USERS_INPUT_QUERY = binding.edtSearchQuery.text.trim().toString()
-            loadPhotos()
+            loadPhotos(usersQuery = binding.edtSearchQuery.text.trim().toString())
         }
     }
 
-    private fun loadPhotos() {
-        viewModel.loadPhotos(findByUserQuery).observe(this,
+    private fun loadPhotos(usersQuery: String = "") {
+        viewModel.loadPhotos(usersQuery).observe(this,
             { list ->
                 with(viewModel.photosAdapter) {
                     photos.clear()

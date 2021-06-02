@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.mikhailovalx.photos.utilits.APP_ACTIVITY
+import com.mikhailovalx.photos.MainActivity
 import com.mikhailovalx.photos.R
 import com.mikhailovalx.photos.databinding.FragmentStartBinding
 
@@ -29,8 +29,9 @@ class StartFragment : Fragment() {
     }
 
     private fun initialization() {
+        val mainActivity = activity as MainActivity
         binding.btnOpenPhotosPage.setOnClickListener{
-            APP_ACTIVITY.navController.navigate(R.id.action_startFragment_to_photosFragment)
+            mainActivity.navController.navigate(R.id.action_startFragment_to_photosFragment)
         }
     }
 

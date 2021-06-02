@@ -7,7 +7,6 @@ import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.mikhailovalx.photos.databinding.ActivityMainBinding
-import com.mikhailovalx.photos.utilits.APP_ACTIVITY
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Flowable
 import io.reactivex.rxjava3.core.Observable
@@ -31,7 +30,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initialization() {
-        APP_ACTIVITY = this
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
     }
 

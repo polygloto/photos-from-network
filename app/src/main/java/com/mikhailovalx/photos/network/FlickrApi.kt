@@ -1,7 +1,6 @@
 package com.mikhailovalx.photos.network
 
 import com.mikhailovalx.photos.utilits.FLICKR_API
-import com.mikhailovalx.photos.utilits.USERS_INPUT_QUERY
 import com.mikhailovalx.photos.data.PhotosSearchResponse
 import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
