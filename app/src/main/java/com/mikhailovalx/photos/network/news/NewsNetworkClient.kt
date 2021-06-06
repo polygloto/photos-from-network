@@ -19,7 +19,6 @@ object NewsNetworkClient {
             .addConverterFactory( // Conversion support. To turn json into an object.
                 GsonConverterFactory.create(
                     GsonBuilder()
-                        .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
                         .setLenient()
                         .create()
                 )
