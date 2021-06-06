@@ -1,4 +1,4 @@
-package com.mikhailovalx.photos.data
+package com.mikhailovalx.photos.data.photos
 
 data class Photo(
     val id: String,

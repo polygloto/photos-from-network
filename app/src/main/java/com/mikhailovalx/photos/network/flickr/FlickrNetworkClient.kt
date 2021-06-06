@@ -1,4 +1,4 @@
-package com.mikhailovalx.photos.network
+package com.mikhailovalx.photos.network.flickr
 
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
@@ -11,7 +11,7 @@ import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-object NetworkClient {
+object FlickrNetworkClient {
     //Used a delegate to initialize the variable once.
     //The next call will return the value without reinitialization.
     val client: FlickrApi by lazy {

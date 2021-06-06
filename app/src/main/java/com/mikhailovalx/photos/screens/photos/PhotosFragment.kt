@@ -15,7 +15,6 @@ class PhotosFragment : Fragment() {
     private var _binding: FragmentPhotosBinding? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: PhotosFragmentViewModel
-    private var findByUserQuery: Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,11 +33,10 @@ class PhotosFragment : Fragment() {
 
     private fun initialization() {
         viewModel = ViewModelProvider(this).get(PhotosFragmentViewModel::class.java)
-        binding.recyclerView.adapter = viewModel.photosAdapter
-        binding.recyclerView.layoutManager = GridLayoutManager(context, 3)
+        binding.rvPhotos.adapter = viewModel.photosAdapter
+        binding.rvPhotos.layoutManager = GridLayoutManager(context, 3)
 
         binding.btnGetPhotos.setOnClickListener {
-            findByUserQuery = binding.edtSearchQuery.text.trim().isNotEmpty()
             loadPhotos(usersQuery = binding.edtSearchQuery.text.trim().toString())
         }
     }

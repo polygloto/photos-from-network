@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentActivity
 import com.mikhailovalx.photos.MainActivity
 import com.mikhailovalx.photos.R
 import com.mikhailovalx.photos.databinding.FragmentStartBinding
+import com.mikhailovalx.photos.screens.news.NewsFragment
 
 
 class StartFragment : Fragment() {
@@ -30,8 +31,14 @@ class StartFragment : Fragment() {
     }
 
     private fun initialization() {
+        // Photos
         binding.btnOpenPhotosPage.setOnClickListener {
             getMainActivity(activity)?.navController?.navigate(R.id.action_startFragment_to_photosFragment)
+        }
+
+        // News
+        binding.btnOpenNewsPage.setOnClickListener {
+            getMainActivity(activity)?.navController?.navigate(R.id.action_startFragment_to_newsFragment)
         }
     }
 

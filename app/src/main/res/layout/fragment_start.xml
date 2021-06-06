@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".screens.start.StartFragment">
 
     <Button
@@ -14,6 +15,15 @@
         android:layout_gravity="center"
         android:layout_margin="@dimen/app_margin"
         android:text="@string/btn_photos"
+        android:textSize="@dimen/text_size_default"/>
+
+    <Button
+        android:id="@+id/btn_open_news_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/app_margin"
+        android:text="@string/btn_news"
         android:textSize="@dimen/text_size_default"/>
 
 </LinearLayout>

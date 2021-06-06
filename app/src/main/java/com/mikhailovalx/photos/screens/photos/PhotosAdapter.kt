@@ -3,12 +3,12 @@ package com.mikhailovalx.photos.screens.photos
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.mikhailovalx.photos.utilits.IMAGE_SIDE_PX
 import com.mikhailovalx.photos.R
-import com.mikhailovalx.photos.data.Photo
+import com.mikhailovalx.photos.data.photos.Photo
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.photo_item.view.*
 
 class PhotosAdapter(val photos: MutableList<Photo> = mutableListOf()) :
     RecyclerView.Adapter<PhotosAdapter.PhotosViewHolder>() {
@@ -25,7 +25,7 @@ class PhotosAdapter(val photos: MutableList<Photo> = mutableListOf()) :
                 .load(photo.url)
                 .resize(IMAGE_SIDE_PX, IMAGE_SIDE_PX)
                 .centerCrop()
-                .into(itemView.img_photo_item) // TODO how to use viewBinding here?
+                .into(itemView.findViewById<ImageView>(R.id.img_photo_item))
         }
     }
 

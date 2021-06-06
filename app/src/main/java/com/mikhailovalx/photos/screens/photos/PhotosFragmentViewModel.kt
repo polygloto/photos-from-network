@@ -6,9 +6,9 @@ import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.mikhailovalx.photos.data.Photo
-import com.mikhailovalx.photos.data.PhotosSearchResponse
-import com.mikhailovalx.photos.network.NetworkClient
+import com.mikhailovalx.photos.data.photos.Photo
+import com.mikhailovalx.photos.data.photos.PhotosSearchResponse
+import com.mikhailovalx.photos.network.flickr.FlickrNetworkClient
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -25,8 +25,8 @@ class PhotosFragmentViewModel(application: Application) : AndroidViewModel(appli
     fun loadPhotos(usersQuery: String): LiveData<List<Photo>> {
 
         val queryFunction =
-            if (usersQuery.isEmpty()) NetworkClient.client.getRandomImages()
-            else NetworkClient.client.getImages(usersQuery)
+            if (usersQuery.isEmpty()) FlickrNetworkClient.client.getRandomImages()
+            else FlickrNetworkClient.client.getImages(usersQuery)
 
         compositeDisposable.add(
             queryFunction
